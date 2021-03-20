@@ -6,7 +6,7 @@ spec:
   restartPolicy: Always
   volumes:
     - name: data
-      emptyDir: ()
+      emptyDir: {}
   initContainers:
     - name: nginx-init
       image: docker/whalesay
@@ -17,6 +17,9 @@ spec:
           mountPath: /data
   containers:
     - name: nginx
-      mountPath: /usr/share/nginx/html
+      image: nginx:1.11
+      volumeMounts:
+        - name: data
+          mountPath: /usr/share/nginx/html
 
 
