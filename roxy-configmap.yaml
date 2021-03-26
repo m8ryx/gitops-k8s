@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample
+data:
+  index.html: hello Roxy, you are awesome!
+
